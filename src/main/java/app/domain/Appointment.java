@@ -9,6 +9,14 @@ public class Appointment {
     private String description;
     private double cost;
     private String appointmentState;
+    private Patient patient;
+
+    public Patient getPatient() {
+        return patient;
+    }
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+    }
 
     public Appointment() {
     }
