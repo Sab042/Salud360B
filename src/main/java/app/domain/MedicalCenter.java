@@ -6,7 +6,7 @@ public class MedicalCenter {
     private String centerType;
     private String address;
     private String city;
-    private Doctor doctor;
+    private Professional doctor;
     private boolean isAvailable;
 
     public MedicalCenter() {
@@ -44,11 +44,11 @@ public class MedicalCenter {
         this.city = city;
     }
 
-    public Doctor getDoctor() {
+    public Professional getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(Doctor doctor) {
+    public void setDoctor(Professional doctor) {
         this.doctor = doctor;
     }
 
