@@ -1,6 +1,6 @@
 package app.domain.enums;
 
-public enum DocumentTypeEnum {
+public enum DocType {
 
     CEDULA_CIUDADANIA("Cedula de Ciudadania"),
     TARJETA_IDENTIDAD("Tarjeta de Identidad"),
@@ -9,7 +9,7 @@ public enum DocumentTypeEnum {
 
     private final String value;
 
-    DocumentTypeEnum(String value) {
+    DocType(String value) {
         this.value = value;
     }
 

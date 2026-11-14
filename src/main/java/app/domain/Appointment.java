@@ -1,25 +1,34 @@
 package app.domain;
 
+import app.enums.AppointmentState;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+
 public class Appointment {
 
     private Integer appointmentId;
-    private String dateInit;
-    private String dateEnd;
+    private Patient patient;
+    private Professional professional;
     private MedicalCenter medicalCenter;
-    private String description;
-    private double cost;
-    private String appointmentState;
+    private LocalDateTime dateInit;
+    private LocalDateTime dateEnd;
+    private String descriptionAppointment;
+    private AppointmentState appointmentState;
 
     public Appointment() {
     }
 
-    public Appointment(Integer appointmentId, String dateInit, String dateEnd, MedicalCenter medicalCenter, String description, double cost, String appointmentState) {
+    public Appointment(Integer appointmentId, Patient patient, Professional professional,
+                       MedicalCenter medicalCenter, LocalDateTime dateInit, LocalDateTime dateEnd,
+                       String descriptionAppointment, AppointmentState appointmentState) {
         this.appointmentId = appointmentId;
+        this.patient = patient;
+        this.professional = professional;
+        this.medicalCenter = medicalCenter;
         this.dateInit = dateInit;
         this.dateEnd = dateEnd;
-        this.medicalCenter = medicalCenter;
-        this.description = description;
-        this.cost = cost;
+        this.descriptionAppointment = descriptionAppointment;
         this.appointmentState = appointmentState;
     }
 
@@ -31,20 +40,20 @@ public class Appointment {
         this.appointmentId = appointmentId;
     }
 
-    public String getDateInit() {
-        return dateInit;
+    public Patient getPatient() {
+        return patient;
     }
 
-    public void setDateInit(String dateInit) {
-        this.dateInit = dateInit;
+    public void setPatient(Patient patient) {
+        this.patient = patient;
     }
 
-    public String getDateEnd() {
-        return dateEnd;
+    public Professional getProfessional() {
+        return professional;
     }
 
-    public void setDateEnd(String dateEnd) {
-        this.dateEnd = dateEnd;
+    public void setProfessional(Professional professional) {
+        this.professional = professional;
     }
 
     public MedicalCenter getMedicalCenter() {
@@ -55,27 +64,46 @@ public class Appointment {
         this.medicalCenter = medicalCenter;
     }
 
-    public String getDescription() {
-        return description;
+    public LocalDateTime getDateInit() {
+        return dateInit;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDateInit(LocalDateTime dateInit) {
+        this.dateInit = dateInit;
     }
 
-    public double getCost() {
-        return cost;
+    public LocalDateTime getDateEnd() {
+        return dateEnd;
     }
 
-    public void setCost(double cost) {
-        this.cost = cost;
+    public void setDateEnd(LocalDateTime dateEnd) {
+        this.dateEnd = dateEnd;
     }
 
-    public String getAppointmentState() {
+    public String getDescriptionAppointment() {
+        return descriptionAppointment;
+    }
+
+    public void setDescriptionAppointment(String descriptionAppointment) {
+        this.descriptionAppointment = descriptionAppointment;
+    }
+
+    public AppointmentState getAppointmentState() {
         return appointmentState;
     }
 
-    public void setAppointmentState(String appointmentState) {
+    public void setAppointmentState(AppointmentState appointmentState) {
         this.appointmentState = appointmentState;
+    }
+
+    // Methods
+
+    public long getDurationMinutes() {
+        return Duration.between(dateInit, dateEnd).toMinutes();
+    }
+
+    /** Dos rangos se cruzan si cada uno empieza antes de que el otro termine. */
+    public boolean overlapsWith(LocalDateTime init, LocalDateTime end) {
+        return dateInit.isBefore(end) && dateEnd.isAfter(init);
     }
 }
