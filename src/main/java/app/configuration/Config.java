@@ -3,7 +3,7 @@
 package app.configuration;
 
 import app.domain.Patient;
-import app.persistence.dbconnection.DataBaseConnection;
+import app.configuration.dbconnection.DataBaseConnection;
 import app.persistence.mapper.PatientMapper;
 import app.persistence.mapper.RowMapper;
 import app.persistence.repository.PatientRepositoryImpl;
@@ -13,7 +13,6 @@ package app.config;
 import app.helpers.ConsoleHelper;
 import app.repository.AppointmentRepositoryImpl;
 import app.repository.MedicalCenterRepositoryImpl;
-import app.repository.PatientRepositoryImpl;
 import app.repository.ProfessionalRepositoryImpl;
 import app.service.AppointmentServiceImpl;
 import app.service.MedicalCenterServiceImpl;
@@ -34,7 +33,7 @@ import app.view.MedicalCenterView;
 import app.view.PatientView;
 import app.view.ProfessionalView;
 
-<<<<<<< HEAD
+
 import java.sql.Connection;
 
 public class Config {
@@ -63,7 +62,7 @@ public class Config {
         // Crear la interfaz de usuario
         return new UserInterface(patientView);
     }
-=======
+
 /**
  * Raíz de composición: aquí se crean las implementaciones y se inyectan cada una
  * en quien la necesita, siempre a través de interfaces (inversión de dependencias):
@@ -134,5 +133,5 @@ public class Config {
     public MainMenu getMainMenu() {
         return mainMenu;
     }
->>>>>>> 9ec40bd3c442923118fe60777b15311b705168bc
+
 }
