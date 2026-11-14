@@ -4,7 +4,7 @@ import app.domain.Appointment;
 import app.domain.MedicalCenter;
 import java.util.List;
 
-public interface AppointmentService {
+public interface AppointmentServiceInterface {
 
     public Appointment createAppointment(Integer appointmentId, String dateInit, String dateEnd, MedicalCenter medicalCenter, String description, double cost, String appointmentState);
 

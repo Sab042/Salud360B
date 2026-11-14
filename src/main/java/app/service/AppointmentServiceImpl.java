@@ -2,10 +2,10 @@ package app.service;
 
 import app.domain.Appointment;
 import app.domain.MedicalCenter;
-import app.service.inputport.AppointmentService;
+import app.service.inputport.AppointmentServiceInterface;
 import java.util.List;
 
-public class AppointmentServiceImpl implements AppointmentService {
+public class AppointmentServiceImpl implements AppointmentServiceInterface {
 
     @Override
     public Appointment createAppointment(Integer appointmentId, String dateInit, String dateEnd, MedicalCenter medicalCenter, String description, double cost, String appointmentState) {
