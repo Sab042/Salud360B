@@ -4,7 +4,7 @@ import app.domain.Appointment;
 import app.service.outputport.AppointmentRepositoryInterface;
 import java.util.List;
 
-public class AppointmentRepositoryImpl implements AppointmentRepositoryInterface {
+public class MedicalCenterRepositorylmpl implements AppointmentRepositoryInterface {
 
     @Override
     public Appointment saveAppointment(Appointment appointment) {

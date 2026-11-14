@@ -1,7 +1,7 @@
 package app.config;
 
 import app.helpers.ConsoleHelper;
-import app.repository.AppointmentRepositoryImpl;
+import app.repository.MedicalCenterRepositorylmpl;
 import app.repository.MedicalCenterRepositoryImpl;
 import app.repository.PatientRepositoryImpl;
 import app.repository.ProfessionalRepositoryImpl;
@@ -52,7 +52,7 @@ public class Config {
         PatientRepositoryPort patientRepository = new PatientRepositoryImpl();
         ProfessionalRepositoryPort professionalRepository = new ProfessionalRepositoryImpl();
         MedicalCenterRepositoryPort medicalCenterRepository = new MedicalCenterRepositoryImpl();
-        AppointmentRepositoryPort appointmentRepository = new AppointmentRepositoryImpl();
+        AppointmentRepositoryPort appointmentRepository = new MedicalCenterRepositorylmpl();
 
         // 2. Puertos de entrada -> adaptadores (servicios), inyectando los puertos de salida
         PatientServiceInterface patientService =
