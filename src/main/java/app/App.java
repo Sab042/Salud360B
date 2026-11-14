@@ -1,12 +1,19 @@
 package app;
 
-import app.configuration.Config;
-import app.userinterface.UserInterface;
+import app.config.Config;
+
+import java.util.NoSuchElementException;
 
 public class App {
 
     public static void main(String[] args) {
-        UserInterface userInterface = Config.createUserInterface();
-        userInterface.menuApp();
+        Config config = new Config();
+        try {
+            config.getMainMenu().show();
+        } catch (NoSuchElementException e) {
+            // La entrada estándar se cerró (Ctrl+D / fin de archivo)
+            System.out.println();
+            System.out.println("Entrada finalizada. Hasta pronto.");
+        }
     }
 }
