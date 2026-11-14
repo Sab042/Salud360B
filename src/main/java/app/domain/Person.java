@@ -1,28 +1,31 @@
 package app.domain;
 
-import java.util.Date;
+import app.enums.DocType;
+
+import java.time.LocalDate;
+import java.time.Period;
 
 public class Person {
 
-    private int id;
-    private String docType;
+    // Attributes
+    private long id;
+    private DocType docType;
     private String name;
     private String lastName;
     private String phone;
     private String email;
     private String address;
+    private String username;
     private String password;
-    private Date birthDate;
+    private LocalDate birthDate;
+
+    // Constructores
 
     public Person() {
     }
 
-    public Person(String name, String email) {
-        this.name = name;
-        this.email = email;
-    }
-
-    public Person(int id, String docType, String name, String lastName, String phone, String email, String address, String password, Date birthDate) {
+    public Person(long id, DocType docType, String name, String lastName, String phone, String email,
+                  String address, String username, String password, LocalDate birthDate) {
         this.id = id;
         this.docType = docType;
         this.name = name;
@@ -30,23 +33,26 @@ public class Person {
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.username = username;
         this.password = password;
         this.birthDate = birthDate;
     }
 
-    public int getId() {
+    // Getters and Setters
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public String getDocType() {
+    public DocType getDocType() {
         return docType;
     }
 
-    public void setDocType(String docType) {
+    public void setDocType(DocType docType) {
         this.docType = docType;
     }
 
@@ -90,6 +96,14 @@ public class Person {
         this.address = address;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -98,26 +112,21 @@ public class Person {
         this.password = password;
     }
 
-    public Date getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
-    public void create() {
+    // Methods
+
+    public String getFullName() {
+        return name + " " + lastName;
     }
 
-    public void selectById(int id) {
-    }
-
-    public void selectAll() {
-    }
-
-    public void update() {
-    }
-
-    public void delete(int id) {
+    public int getAge() {
+        return birthDate == null ? 0 : Period.between(birthDate, LocalDate.now()).getYears();
     }
 }
