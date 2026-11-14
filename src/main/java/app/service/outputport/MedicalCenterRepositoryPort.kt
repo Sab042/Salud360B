@@ -1,18 +1,21 @@
-package app.service.outputports
+package app.service.outputports;
 
-import app.domain.MedicalCenter
-import java.util.*
+import app.domain.MedicalCenter;
 
-interface MedicalCenterRepositoryPort {
-    fun createMedicalCenter(medicalCenter: MedicalCenter?): MedicalCenter?
+import java.util.List;
+import java.util.Optional;
 
-    fun selectMedicalCenterById(centerId: Int): Optional<MedicalCenter?>?
+public interface MedicalCenterRepositoryPort {
 
-    fun selectMedicalCenterByNameAndCity(name: String?, city: String?): Optional<MedicalCenter?>?
+    MedicalCenter createMedicalCenter(MedicalCenter medicalCenter);
 
-    fun selectAllMedicalCenters(): MutableList<MedicalCenter?>?
+    Optional<MedicalCenter> selectMedicalCenterById(int centerId);
 
-    fun updateMedicalCenter(medicalCenter: MedicalCenter?): MedicalCenter?
+    Optional<MedicalCenter> selectMedicalCenterByNameAndCity(String name, String city);
 
-    fun deleteMedicalCenter(centerId: Int): Boolean
+    List<MedicalCenter> selectAllMedicalCenters();
+
+    MedicalCenter updateMedicalCenter(MedicalCenter medicalCenter);
+
+    boolean deleteMedicalCenter(int centerId);
 }
