@@ -1,10 +1,10 @@
 package app.repository;
 
 import app.domain.Appointment;
-import app.service.outputport.AppointmentRepositoryInterface;
+import app.service.outputport.AppointmentRepositoryPort;
 import java.util.List;
 
-public class MedicalCenterRepositorylmpl implements AppointmentRepositoryInterface {
+public class MedicalCenterRepositorylmpl implements AppointmentRepositoryPort {
 
     @Override
     public Appointment saveAppointment(Appointment appointment) {
