@@ -1,50 +1,30 @@
 package app.domain;
 
-import java.util.Date;
+import app.enums.DocType;
+import app.enums.PatientType;
+
+import java.time.LocalDate;
 
 public class Patient extends Person {
 
-    private String patientType;
+    private PatientType typePatient;
 
     public Patient() {
         super();
     }
 
-    public Patient(int id, String docType, String name, String lastName, String phone, String email, String address, String password, Date birthDate, String patientType) {
-        super(id, docType, name, lastName, phone, email, address, password, birthDate);
-        this.patientType = patientType;
+    public Patient(long id, DocType docType, String name, String lastName, String phone, String email,
+                   String address, String username, String password, LocalDate birthDate,
+                   PatientType typePatient) {
+        super(id, docType, name, lastName, phone, email, address, username, password, birthDate);
+        this.typePatient = typePatient;
     }
 
-    public String getPatientType() {
-        return patientType;
+    public PatientType getTypePatient() {
+        return typePatient;
     }
 
-    public void setPatientType(String patientType) {
-        this.patientType = patientType;
-    }
-
-    @Override
-    public void create() {
-        super.create();
-    }
-
-    @Override
-    public void selectById(int id) {
-        super.selectById(id);
-    }
-
-    @Override
-    public void selectAll() {
-        super.selectAll();
-    }
-
-    @Override
-    public void update() {
-        super.update();
-    }
-
-    @Override
-    public void delete(int id) {
-        super.delete(id);
+    public void setTypePatient(PatientType typePatient) {
+        this.typePatient = typePatient;
     }
 }
