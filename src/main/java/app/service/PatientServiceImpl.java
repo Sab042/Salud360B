@@ -2,15 +2,15 @@ package app.service;
 
 import app.domain.Patient;
 import app.service.inputport.PatientServiceInterface;
-import app.service.outputport.PatientRepository;
+import app.service.outputport.PatientRepositoryPort;
 import java.util.Date;
 import java.util.List;
 
 public class PatientServiceImpl implements PatientServiceInterface {
 
-    private final PatientRepository patientRepository;
+    private final PatientRepositoryPort patientRepository;
 
-    public PatientServiceImpl(PatientRepository patientRepository) {
+    public PatientServiceImpl(PatientRepositoryPort patientRepository) {
         this.patientRepository = patientRepository;
     }
 
