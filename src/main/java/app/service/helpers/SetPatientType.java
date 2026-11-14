@@ -1,6 +1,6 @@
 package app.service.helpers;
 
-import app.domain.enums.PatientTypeEnum;
+import app.domain.enums.PatientType;
 import app.service.validations.FormTypeValidator;
 
 public class SetPatientType {
@@ -13,13 +13,13 @@ public class SetPatientType {
         String value = "";
         switch (option) {
             case 1:
-                value = PatientTypeEnum.CONTRIBUTIVO.getValue();
+                value = PatientType.CONTRIBUTIVO.getValue();
                 break;
             case 2:
-                value = PatientTypeEnum.SUBSIDIADO.getValue();
+                value = PatientType.SUBSIDIADO.getValue();
                 break;
             case 3:
-                value = PatientTypeEnum.PARTICULAR.getValue();
+                value = PatientType.PARTICULAR.getValue();
                 break;
             default:
                 System.out.println("Opción inválida. Por favor, seleccione una opción válida.");

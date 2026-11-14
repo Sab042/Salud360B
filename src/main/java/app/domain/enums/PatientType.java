@@ -1,6 +1,6 @@
 package app.domain.enums;
 
-public enum PatientTypeEnum {
+public enum PatientType {
 
     CONTRIBUTIVO("Regimen Contributivo"),
     SUBSIDIADO("Regimen Subsidiado"),
@@ -8,7 +8,7 @@ public enum PatientTypeEnum {
 
     private final String value;
 
-    PatientTypeEnum(String value) {
+    PatientType(String value) {
         this.value = value;
     }
 
