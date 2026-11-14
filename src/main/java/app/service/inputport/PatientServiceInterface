@@ -1,0 +1,25 @@
+package app.service.inputports;
+
+import app.domain.MedicalCenter;
+import app.enums.CenterType;
+
+import java.util.List;
+
+public interface MedicalCenterServiceInterface {
+
+    MedicalCenter createMedicalCenter(String name, CenterType centerType, String address, String city,
+                                      boolean isAvailable);
+
+    MedicalCenter selectMedicalCenterById(int centerId);
+
+    List<MedicalCenter> selectAllMedicalCenters();
+
+    MedicalCenter updateMedicalCenter(int centerId, String name, CenterType centerType, String address,
+                                      String city, boolean isAvailable);
+
+    void deleteMedicalCenter(int centerId);
+
+    MedicalCenter assignProfessional(int centerId, long professionalId);
+
+    MedicalCenter removeProfessional(int centerId, long professionalId);
+}

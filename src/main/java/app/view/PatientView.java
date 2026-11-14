@@ -3,16 +3,16 @@ package app.view;
 import app.domain.Patient;
 import app.service.helpers.SetPatientType;
 import app.service.helpers.SetPersonDocType;
-import app.service.inputport.PatientService;
+import app.service.inputport.PatientServiceInterface;
 import app.service.validations.FormTypeValidator;
 import java.util.Date;
 import java.util.List;
 
 public class PatientView {
 
-    private final PatientService patientService;
+    private final PatientServiceInterface patientService;
 
-    public PatientView(PatientService patientService) {
+    public PatientView(PatientServiceInterface patientService) {
         this.patientService = patientService;
     }
 
