@@ -4,7 +4,7 @@ import app.domain.Patient;
 import java.util.Date;
 import java.util.List;
 
-public interface PatientService {
+public interface PatientServiceInterface {
 
     public Patient createPatient(int id, String docType, String name, String lastName, String phone, String email, String address, String password, Date birthDate, String patientType);
 
